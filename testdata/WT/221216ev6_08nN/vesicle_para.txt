@@ -1,0 +1,4 @@
+height: 80.0 
+radius: 58.44 
+xmax: 20.0
+shift: 2.0
