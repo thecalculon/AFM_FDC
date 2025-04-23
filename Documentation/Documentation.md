@@ -1,18 +1,19 @@
 
 # Table of Contents
 
-1.  [Code Organization](#orgb2a1825)
-2.  [Data organization](#org7f71b08)
-3.  [Selecting Proper Data](#orgaca5c67)
-    1.  [Exceptional Cases](#orge72bf22)
-    2.  [Additional information](#orgbcd42fa)
-4.  [Estimation of $\widetilde{K_A}$](#org7b73e07)
-5.  [Simulation](#org718c4de)
+1.  [Code Organization](#org9c14ff5)
+2.  [Data organization](#orgcfdaf8f)
+3.  [JPK-software (convert jpk to csv)](#org0ba184d)
+4.  [Selecting Proper Data](#org74b9788)
+    1.  [Exceptional Cases](#orgaf49fa7)
+    2.  [Additional information](#org6563130)
+5.  [Estimation of $\widetilde{K_A}$](#org2faf721)
+6.  [Simulation](#orgc21a5d4)
 
 This documentation should serve as a reference manual for analyzing the data published in the paper (Fredrik Stridfeldt and Hanna Kylhammar and Prattakorn Metem and Vikash Pandey and Vipin Agrawal and Andr{\\'e} G{\\"o}rgens and Doste R Mamand and Oskar Gustafsson and Samir El Andaloussi and Dhrubaditya Mitra and Apurba Dev, 2024).
 
 
-<a id="orgb2a1825"></a>
+<a id="org9c14ff5"></a>
 
 # Code Organization
 
@@ -37,7 +38,7 @@ The code is organized in the following manner:
 The `matlab` folder contains all the matlab subroutines and the `python` folder contains the python codes.
 
 
-<a id="org7f71b08"></a>
+<a id="orgcfdaf8f"></a>
 
 # Data organization
 
@@ -81,7 +82,48 @@ The `SampleType1` is the sample type e.g. `Wild-Type`. It can be given any name.
                   ....
 
 
-<a id="orgaca5c67"></a>
+<a id="org0ba184d"></a>
+
+# JPK-software (convert jpk to csv)
+
+It is essential to convert the data which is in `.jpk` to human readable `.csv` form before performing any analysis. Although the software build for the analysis by the provider can be used to some of the analysis we perform, we do this for greater flexibility. The steps followed are as follows:
+
+-   Open the software
+-   Select
+    
+    <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+    
+    
+    <colgroup>
+    <col  class="org-left" />
+    
+    <col  class="org-left" />
+    </colgroup>
+    <tbody>
+    <tr>
+    <td class="org-left">&#xa0;</td>
+    <td class="org-left">&#xa0;</td>
+    </tr>
+    
+    <tr>
+    <td class="org-left"><img src="imgs/openjpk.png" alt="openjpk.png" /></td>
+    <td class="org-left"><img src="imgs/jpk3rd.png" alt="jpk3rd.png" /></td>
+    </tr>
+    
+    <tr>
+    <td class="org-left"><img src="imgs/jpk6th.png" alt="jpk6th.png" /></td>
+    <td class="org-left"><img src="imgs/jpk7th.png" alt="jpk7th.png" /></td>
+    </tr>
+    
+    <tr>
+    <td class="org-left">&#xa0;</td>
+    <td class="org-left">&#xa0;</td>
+    </tr>
+    </tbody>
+    </table>
+
+
+<a id="org74b9788"></a>
 
 # Selecting Proper Data
 
@@ -100,7 +142,7 @@ Ensure all the criterion listed in the SI of (Fredrik Stridfeldt and Hanna Kylha
 ![img](imgs/reject1.png)
 
 
-<a id="orge72bf22"></a>
+<a id="orgaf49fa7"></a>
 
 ## Exceptional Cases
 
@@ -119,7 +161,7 @@ The fdc will be plotted sequentially and the unwanted file can be removed by pre
 Write something on height vs RC
 
 
-<a id="orgbcd42fa"></a>
+<a id="org6563130"></a>
 
 ## Additional information
 
@@ -133,7 +175,7 @@ All the post-processing data will be generated inside the folder where the `proc
 Height and radius are the height and radius of the membrane. xmax and shift will be explained in the section Simulation. 
 
 
-<a id="org7b73e07"></a>
+<a id="org2faf721"></a>
 
 # Estimation of $\widetilde{K_A}$
 
@@ -147,13 +189,13 @@ in the directory provided as an input while running the script.
 The other output is `AverageFDC.txt` which will store the average FDC.
 
 
-<a id="org718c4de"></a>
+<a id="orgc21a5d4"></a>
 
 # Simulation
 
 The details of simulation is given in the Supplementary information section 10.B of (Fredrik Stridfeldt and Hanna Kylhammar and Prattakorn Metem and Vikash Pandey and Vipin Agrawal and Andr{\\'e} G{\\"o}rgens and Doste R Mamand and Oskar Gustafsson and Samir El Andaloussi and Dhrubaditya Mitra and Apurba Dev, 2024).
 
-Use the code `Optimize1dMembrane.py`. The output will be a fitted curve and the membrane as \![shown] (fig-fit)
+Use the code `Optimize1dMembrane.py`. The output will be a fitted curve and the membrane as \![shown](fig-fit)
 ![img](./imgs/Simulation.png)
 
 Additional parameters required to fit are **shift** = The horizontal correction performed on average fdc and **xmax** = The upper bound for the fitting range. The curve will be fitted from [0+shift to xmax].
