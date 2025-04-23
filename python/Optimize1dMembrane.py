@@ -7,9 +7,6 @@ from scipy.optimize import curve_fit
 import sys as sys
 import os
 import matplotlib.pyplot as plt
-'''
-Code to perform the optimization Here is a brief explanation of how you could implement this in Python:
-'''
 
 #################################################################
 frcecomp=False
