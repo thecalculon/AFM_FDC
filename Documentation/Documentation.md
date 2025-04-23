@@ -1,19 +1,19 @@
 
 # Table of Contents
 
-1.  [Code Organization](#orgee525de)
-2.  [Data organization](#org558e07b)
-3.  [JPK-software (convert jpk to csv)](#orgebe0f09)
-4.  [Selecting Proper Data](#orgd1dd9f9)
-    1.  [Exceptional Cases](#orge908c5b)
-    2.  [Additional information](#org2095133)
-5.  [Estimation of $\widetilde{K_A}$](#orga66e974)
-6.  [Simulation](#orgf02b138)
+1.  [Code Organization](#org7f429fd)
+2.  [Data organization](#orgcedb993)
+3.  [JPK-software (convert jpk to csv)](#org9376fff)
+4.  [Selecting Proper Data](#org4e23b05)
+    1.  [Exceptional Cases](#org98ae1b0)
+    2.  [Additional information](#org3c9c684)
+5.  [Estimation of $\widetilde{K_A}$](#orgb486eff)
+6.  [Simulation](#org1cb056d)
 
 This documentation should serve as a reference manual for analyzing the data published in the paper (Fredrik Stridfeldt and Hanna Kylhammar and Prattakorn Metem and Vikash Pandey and Vipin Agrawal and Andr{\\'e} G{\\"o}rgens and Doste R Mamand and Oskar Gustafsson and Samir El Andaloussi and Dhrubaditya Mitra and Apurba Dev, 2024).
 
 
-<a id="orgee525de"></a>
+<a id="org7f429fd"></a>
 
 # Code Organization
 
@@ -38,7 +38,7 @@ The code is organized in the following manner:
 The `matlab` folder contains all the matlab subroutines and the `python` folder contains the python codes.
 
 
-<a id="org558e07b"></a>
+<a id="orgcedb993"></a>
 
 # Data organization
 
@@ -82,7 +82,7 @@ The `SampleType1` is the sample type e.g. `Wild-Type`. It can be given any name.
                   ....
 
 
-<a id="orgebe0f09"></a>
+<a id="org9376fff"></a>
 
 # JPK-software (convert jpk to csv)
 
@@ -91,7 +91,13 @@ It is essential to convert the data which is in `.jpk` to human readable `.csv` 
 -   Open the software
 -   Select open batch of spectroscopy data
 -   Go to the folder and select load
--   <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+-   Apply three operators (highlighted on top) viz: correct offset and tilt, fit slope and correct for zero, and correct for bending of tip. The symbols for the same are circled with red.
+-   In the correct offset and tilt select the necessary operation on the right.
+-   We generally discard the first data curve.
+-   Apply the operation to all the curves
+-   Once finished export the data. Use the naming convention as discussed above. See pictures below for more clarity.
+    
+    <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
     
     
     <colgroup>
@@ -123,7 +129,7 @@ It is essential to convert the data which is in `.jpk` to human readable `.csv` 
     </table>
 
 
-<a id="orgd1dd9f9"></a>
+<a id="org4e23b05"></a>
 
 # Selecting Proper Data
 
@@ -142,7 +148,7 @@ Ensure all the criterion listed in the SI of (Fredrik Stridfeldt and Hanna Kylha
 ![img](imgs/reject1.png)
 
 
-<a id="orge908c5b"></a>
+<a id="org98ae1b0"></a>
 
 ## Exceptional Cases
 
@@ -161,7 +167,7 @@ The fdc will be plotted sequentially and the unwanted file can be removed by pre
 Write something on height vs RC
 
 
-<a id="org2095133"></a>
+<a id="org3c9c684"></a>
 
 ## Additional information
 
@@ -175,7 +181,7 @@ All the post-processing data will be generated inside the folder where the `proc
 Height and radius are the height and radius of the membrane. xmax and shift will be explained in the section Simulation. 
 
 
-<a id="orga66e974"></a>
+<a id="orgb486eff"></a>
 
 # Estimation of $\widetilde{K_A}$
 
@@ -189,7 +195,7 @@ in the directory provided as an input while running the script.
 The other output is `AverageFDC.txt` which will store the average FDC.
 
 
-<a id="orgf02b138"></a>
+<a id="org1cb056d"></a>
 
 # Simulation
 
