@@ -1,19 +1,19 @@
 
 # Table of Contents
 
-1.  [Code Organization](#orga950456)
-2.  [Data organization](#orgf28862a)
-3.  [JPK-software (convert jpk to csv)](#org307c86a)
-4.  [Selecting Proper Data](#org7242d87)
-    1.  [Exceptional Cases](#org043a2e5)
-    2.  [Additional information](#org464cc69)
-5.  [Estimation of $\widetilde{K_A}$](#orgf07510c)
-6.  [Simulation](#org0a75db3)
+1.  [Code Organization](#orgee525de)
+2.  [Data organization](#org558e07b)
+3.  [JPK-software (convert jpk to csv)](#orgebe0f09)
+4.  [Selecting Proper Data](#orgd1dd9f9)
+    1.  [Exceptional Cases](#orge908c5b)
+    2.  [Additional information](#org2095133)
+5.  [Estimation of $\widetilde{K_A}$](#orga66e974)
+6.  [Simulation](#orgf02b138)
 
 This documentation should serve as a reference manual for analyzing the data published in the paper (Fredrik Stridfeldt and Hanna Kylhammar and Prattakorn Metem and Vikash Pandey and Vipin Agrawal and Andr{\\'e} G{\\"o}rgens and Doste R Mamand and Oskar Gustafsson and Samir El Andaloussi and Dhrubaditya Mitra and Apurba Dev, 2024).
 
 
-<a id="orga950456"></a>
+<a id="orgee525de"></a>
 
 # Code Organization
 
@@ -38,7 +38,7 @@ The code is organized in the following manner:
 The `matlab` folder contains all the matlab subroutines and the `python` folder contains the python codes.
 
 
-<a id="orgf28862a"></a>
+<a id="org558e07b"></a>
 
 # Data organization
 
@@ -82,7 +82,7 @@ The `SampleType1` is the sample type e.g. `Wild-Type`. It can be given any name.
                   ....
 
 
-<a id="org307c86a"></a>
+<a id="orgebe0f09"></a>
 
 # JPK-software (convert jpk to csv)
 
@@ -107,7 +107,7 @@ It is essential to convert the data which is in `.jpk` to human readable `.csv` 
     
     <tr>
     <td class="org-left"><img src="imgs/openjpk.png" alt="openjpk.png" /></td>
-    <td class="org-left"><img src="imgs/jpk1rd.png" alt="jpk1rd.png" /></td>
+    <td class="org-left"><img src="imgs/jpk1st.png" alt="jpk1st.png" /></td>
     </tr>
     
     <tr>
@@ -123,7 +123,7 @@ It is essential to convert the data which is in `.jpk` to human readable `.csv` 
     </table>
 
 
-<a id="org7242d87"></a>
+<a id="orgd1dd9f9"></a>
 
 # Selecting Proper Data
 
@@ -142,7 +142,7 @@ Ensure all the criterion listed in the SI of (Fredrik Stridfeldt and Hanna Kylha
 ![img](imgs/reject1.png)
 
 
-<a id="org043a2e5"></a>
+<a id="orge908c5b"></a>
 
 ## Exceptional Cases
 
@@ -161,7 +161,7 @@ The fdc will be plotted sequentially and the unwanted file can be removed by pre
 Write something on height vs RC
 
 
-<a id="org464cc69"></a>
+<a id="org2095133"></a>
 
 ## Additional information
 
@@ -175,7 +175,7 @@ All the post-processing data will be generated inside the folder where the `proc
 Height and radius are the height and radius of the membrane. xmax and shift will be explained in the section Simulation. 
 
 
-<a id="orgf07510c"></a>
+<a id="orga66e974"></a>
 
 # Estimation of $\widetilde{K_A}$
 
@@ -189,7 +189,7 @@ in the directory provided as an input while running the script.
 The other output is `AverageFDC.txt` which will store the average FDC.
 
 
-<a id="org0a75db3"></a>
+<a id="orgf02b138"></a>
 
 # Simulation
 
