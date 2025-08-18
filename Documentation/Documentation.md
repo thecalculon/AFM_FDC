@@ -11,7 +11,7 @@
 6.  [Violin Plot and Distribution](#org6df830b)
 7.  [Simulation](#org0573011)
 
-This documentation should serve as a reference manual for analyzing the data published in the paper (??, ????).
+This documentation should serve as a reference manual for analyzing the data published in the paper (Force spectroscopy reveals membrane fluctuations andsurface adhesion of extracellular nanovesicles impacttheir elastic behavior).
 
 
 <a id="org4d60a9d"></a>
@@ -203,7 +203,7 @@ The other output is `AverageFDC.txt` which will store the average FDC.
 
 # Violin Plot and Distribution
 
-We present the data using violin plots. After estimating the mean of all the physical quantity of interest we store them in .xlsx file. A representative is given inside Distribution folder. The code inside the folder (`ViolinPlot.py KApdfWT.py`) can be used to make representative figures as shown below. A sample JS divergence is also given in `KApdfWT.py`
+We present the data using violin plots. After estimating the mean of all the physical quantity of interest we store them in .xlsx file. A representative is given inside Distribution folder. The code inside the folder (`ViolinPlot.py KApdfWT.py`) can be used to make representative figures as shown below. A sample JS divergence estimation is also given in `KApdfWT.py`
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
