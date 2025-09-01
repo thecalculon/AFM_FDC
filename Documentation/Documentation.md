@@ -5,8 +5,8 @@
 <!-- 2.  [Data organization](#org171465f) -->
 <!-- 3.  [JPK-software (convert jpk to csv)](#orgb3d5f92) -->
 <!-- 4.  [Selecting Proper Data](#org509959b) -->
-    <!-- 1.  [Exceptional Cases](#org78489e1) -->
-    <!-- 2.  [Additional information](#orgd486408) -->
+<!-- 1.  [Exceptional Cases](#org78489e1) -->
+<!-- 2.  [Additional information](#orgd486408) -->
 <!-- 5.  [Estimation of $\widetilde{K_A}$](#orga6e7ac2) -->
 <!-- 6.  [Violin Plot and Distribution](#org6df830b) -->
 <!-- 7.  [Simulation](#org0573011) -->
