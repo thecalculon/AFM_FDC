@@ -1,15 +1,15 @@
 
-# Table of Contents
+<!-- # Table of Contents -->
 
-1.  [Code Organization](#org4d60a9d)
-2.  [Data organization](#org171465f)
-3.  [JPK-software (convert jpk to csv)](#orgb3d5f92)
-4.  [Selecting Proper Data](#org509959b)
-    1.  [Exceptional Cases](#org78489e1)
-    2.  [Additional information](#orgd486408)
-5.  [Estimation of $\widetilde{K_A}$](#orga6e7ac2)
-6.  [Violin Plot and Distribution](#org6df830b)
-7.  [Simulation](#org0573011)
+<!-- 1.  [Code Organization](#org4d60a9d) -->
+<!-- 2.  [Data organization](#org171465f) -->
+<!-- 3.  [JPK-software (convert jpk to csv)](#orgb3d5f92) -->
+<!-- 4.  [Selecting Proper Data](#org509959b) -->
+    <!-- 1.  [Exceptional Cases](#org78489e1) -->
+    <!-- 2.  [Additional information](#orgd486408) -->
+<!-- 5.  [Estimation of $\widetilde{K_A}$](#orga6e7ac2) -->
+<!-- 6.  [Violin Plot and Distribution](#org6df830b) -->
+<!-- 7.  [Simulation](#org0573011) -->
 
 This documentation should serve as a reference manual for analyzing the data published in the paper (Force spectroscopy reveals membrane fluctuations andsurface adhesion of extracellular nanovesicles impacttheir elastic behavior).
 
@@ -147,7 +147,7 @@ The output window will show all the curves, where the first indentation will be 
 
 ![img](./imgs/testvizualize.png)
 
-Ensure all the criterion listed in the SI of (??, ) is obeyed. For example the following experiment data is expected to be deleted
+Ensure all the criterion listed in the Supplementary Information (of paper) are met. For example the following experiment data is expected to be deleted
 
 ![img](./imgs/reject1.png)
 
@@ -156,19 +156,17 @@ Ensure all the criterion listed in the SI of (??, ) is obeyed. For example the f
 
 ## Exceptional Cases
 
-It is possible that only few processed-curve could be erroneous \![see](fig-fewerror). This mainly happens during converting the data to csv using the jpk-software. Here these curves should be removed before copying the data into the expected directory. 
+It is possible that only few processed-curve could be erroneous (figure below). This mainly happens during converting the data to csv using the jpk-software. Here these curves should be removed before copying the data into the expected directory. 
 
 ![img](./imgs/removebadguy.png)
 
 To remove the erroneous curve run `visualize-and-delete.py`. The execution is same as before
-
+```python
     python visualize.py path/to/folder/containing/processed_curves-*/directory
-
-The fdc will be plotted sequentially and the unwanted file can be removed by pressing [d]. See the terminal output Figure \![see](term<sub>info</sub>).
+```
+The fdc will be plotted sequentially and the unwanted file can be removed by pressing [d]. See the terminal output Figure below.
 
 ![img](imgs/sequencial-removing.png)
-
-Write something on height vs RC
 
 
 <a id="orgd486408"></a>
@@ -198,6 +196,17 @@ in the directory provided as an input while running the script.
 
 The other output is `AverageFDC.txt` which will store the average FDC.
 
+# Tethers 
+To identify tethers and print F/L to a file use the code `TetherandKappa.py`. The F/L is written in the file 'FbyL.txt' inside the folder passed as an argument. To execute the code 
+```python
+python TetherandKappa.py  path/to/folder/containing/processed_curves*/directory/
+```
+The output will also be a figure as shown below
+![img](imgs/TetherForce.png)
+
+**Note** It is important to note that sometimes there are false positives being detected as tethers. Such curves must be removed manually or by tweaking the parameters in the script. 
+
+The F/L is used to determine the bending modulus $\kappa$ after $R_c$ and H is obtained from AFM. 
 
 <a id="org6df830b"></a>
 
